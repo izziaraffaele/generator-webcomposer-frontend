@@ -1,4 +1,4 @@
-# generator-silex-app 
+# WebComposer Frontend Generator
 
 > [Yeoman](http://yeoman.io) generator for the frontend of a WebComposer app. 
 
