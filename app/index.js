@@ -8,12 +8,12 @@ var chalk = require('chalk');
 var Generator = yeoman.generators.Base.extend({
     init: function () {
         this.pkg = yeoman.file.readJSON(path.join(__dirname, '../package.json'));
+        this.options['projectName'] = this.options['projectName'] || 'MyApp';
     },
     app: function () {
         // main htaccess
-        var appName = this.options['projectName'] || 'myApp';
-        this.template('_bower.json', 'bower.json',{'projectName':appName});
-        this.template('_gulpfile.js', 'gulpfile.js',{'projectName':appName});
+        this.template('_bower.json', 'bower.json',{'projectName':this.options['projectName']});
+        this.template('_gulpfile.js', 'gulpfile.js',{'projectName':this.options['projectName']});
         this.copy('preprocessor.js', 'preprocessor.js');
         this.copy('bowerrc', '.bowerrc');
 
