@@ -15,6 +15,7 @@ var Generator = yeoman.generators.Base.extend({
         this.template('_bower.json', 'bower.json',{'projectName':appName});
         this.template('_gulpfile.js', 'gulpfile.js',{'projectName':appName});
         this.copy('preprocessor.js', 'preprocessor.js');
+        this.copy('bowerrc', '.bowerrc');
 
         // webroot & bootstrap
         this.directory('app/assets','app/assets');
