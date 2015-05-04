@@ -1,8 +1,7 @@
-
 var React = window.React = require('react'),
-    ReactMounter = require('./reactMounter.js'),
-    LoginForm = require("./ui/LoginForm.jsx"),
-    SignupForm = require("./ui/SignupForm.jsx");
+    ReactMounter = require('./../utils/reactMounter.js'),
+    LoginForm = require("./../ui/LoginForm.jsx"),
+    SignupForm = require("./../ui/SignupForm.jsx");
 
 var LoginPage = React.createClass({
   render:function(){
@@ -32,4 +31,3 @@ var SignupPage = React.createClass({
   }
 });
 ReactMounter.mount('signup',SignupPage);
-
