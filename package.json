@@ -1,6 +1,6 @@
 {
   "name": "generator-webcomposer-frontend",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "A Yeoman Generator for WebComposer that prepares the frontend of the app.",
   "main": "app/index.js",
   "scripts": {
