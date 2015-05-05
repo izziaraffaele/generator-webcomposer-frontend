@@ -13,7 +13,7 @@ var Generator = yeoman.generators.Base.extend({
     app: function () {
         // main htaccess
         this.template('_bower.json', 'bower.json',{'projectName':this.options['projectName']});
-        this.copy('gulpfile.js', 'gulpfile.js');
+        this.template('_gulpfile.js', 'gulpfile.js',{'projectName':this.options['projectName']});
         this.copy('preprocessor.js', 'preprocessor.js');
         this.copy('webpack.config.js', 'webpack.config.js');
         this.copy('bowerrc', '.bowerrc');

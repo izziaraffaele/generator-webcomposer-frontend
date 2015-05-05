@@ -5,7 +5,11 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')(),
     appPath = require('./../paths.js');
 
-module.exports = function(){
+module.exports = function(appName){
+    browserSync.watch(appPath.rootOut + '/'+ appPath.scriptDir+'/**/*.*').on('change', function(x,y){
+        reload();
+    });
+
     browserSync.init({
         notify: true,
         logPrefix: 'BS',
@@ -13,9 +17,9 @@ module.exports = function(){
         // Note: this uses an unsigned certificate which on first access
         //       will present a certificate warning in the browser.
         // https: true,
-        proxy: "test-generator.dev/web"
+        proxy: appName+".dev/web"
     });
 
     gulp.watch(appPath.rootIn + '/' + appPath.sassDir + '/**/*(*.scss|*.css)', ['styles',reload]);
-    gulp.watch(appPath.rootOut + '/**/*(*.js|*.png|*.jpg)', [reload]);
+    // gulp.watch(appPath.rootOut + '/**/*(*.js|*.png|*.jpg)', [reload]);
 }
