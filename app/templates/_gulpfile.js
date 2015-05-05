@@ -19,7 +19,7 @@ gulp.task('build', ['clean', 'bower', 'styles', 'scripts','images','extra']);
 gulp.task('dist', ['build','minify','postBuild']);
 
 gulp.task('watch', ['build'],function(){
-    return serveTask(<%= _.slugify(projectName) %>);
+    return serveTask("<%= _.slugify(projectName) %>");
 });
 
 gulp.task('default', ['dist']);
